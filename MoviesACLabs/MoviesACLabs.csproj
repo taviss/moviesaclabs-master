@@ -102,11 +102,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Data\movies.txt" />
     <Content Include="Global.asax" />
     <Content Include="Index.html" />
+    <Content Include="jquery-1.12.3.js" />
+    <Content Include="lab3.html" />
+    <Content Include="lab4.html" />
+    <Content Include="Scripts\lab3.js" />
+    <Content Include="Scripts\lab4.js" />
     <Content Include="Scripts\Main.js" />
     <Content Include="slide.html" />
-    <Content Include="slide.js" />
+    <Content Include="Scripts\slide.js" />
+    <Content Include="Styles\lab3.css" />
     <Content Include="Styles\Screen.css" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -136,6 +143,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+    <Content Include="Data\movies.json" />
+    <Content Include="save.php" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
