@@ -108,12 +108,15 @@
     <Content Include="jquery-1.12.3.js" />
     <Content Include="lab3.html" />
     <Content Include="lab4.html" />
+    <Content Include="lab5.html" />
     <Content Include="Scripts\lab3.js" />
     <Content Include="Scripts\lab4.js" />
+    <Content Include="Scripts\lab5.js" />
     <Content Include="Scripts\Main.js" />
     <Content Include="slide.html" />
     <Content Include="Scripts\slide.js" />
     <Content Include="Styles\lab3.css" />
+    <Content Include="Styles\lab5.css" />
     <Content Include="Styles\Screen.css" />
     <Content Include="Web.config" />
   </ItemGroup>

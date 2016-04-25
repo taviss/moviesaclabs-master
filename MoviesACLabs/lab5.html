@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html ng-app="movies">
+<head>
+    <title>Lab 5</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+    <script src="Scripts/lab5.js"></script>
+    <link rel="stylesheet" type="text/css" href="Styles/lab5.css">
+    <meta charset="utf-8" />
+</head>
+<body>
+    <div id="wrapper" ng-controller="mainMov">
+        <form ng-submit="addItem()">
+            <p><label>Name:</label><input type="text" ng-model="listItem.name" /><br /></p>
+            <p><label>DoB:</label><input type="text" ng-model="listItem.dob" /><br /></p>
+            <p><label>Revenue:</label><input type="text" ng-model="listItem.revenue" /><br /></p>
+            <input type="submit" id="submit" value="Submit" />
+        </form>
+        <ul ng-repeat="item in list">
+            <li><div ng-hide="editorEnabled(item)">Name: {{item.Name}}<br /> DoB: {{item.DateOfBirth}}<br /> Revenue: {{item.Revenue}}<br />
+                    <button ng-click="deleteItem(item)">Delete</button>
+                    <button ng-click="editItem(item)">Edit</button>
+                </div>
+                <div ng-show="editorEnabled(item)">
+                    Name: <input type="text" ng-model="item.Name" /><br />
+                    DoB: <input type="text" ng-model="item.DateOfBirth" /><br />
+                    Revenue: <input type="text" ng-model="item.Revenue" /><br />
+                    <button ng-click="saveItem(item)">Save</button>
+                </div>
+            </li>
+        </ul>
+</body>
+</html>

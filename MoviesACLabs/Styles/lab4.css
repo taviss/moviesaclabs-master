@@ -1,0 +1,14 @@
+﻿body {
+}
+
+.activeTab {
+    text-decoration: none;
+    color: red;
+    margin-left: 10px;
+}
+
+.inactiveTab {
+    text-decoration:none;
+    color: black;
+    margin-left: 10px;
+}
