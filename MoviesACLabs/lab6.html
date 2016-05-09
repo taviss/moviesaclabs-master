@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html ng-app="movies">
+<head>
+    <title>Lab 6</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+    <script src="Scripts/lab6.js"></script>
+    <link rel="stylesheet" type="text/css" href="Styles/lab5.css">
+    <meta charset="utf-8" />
+</head>
+<body>
+    <div id="wrapper" ng-controller="mainMov">
+        <form ng-submit="addItem()">
+            <p><label>Award:</label><input type="text" ng-model="listItem.name" /><br /></p>
+            <p><label>Actor:</label><input type="text" ng-model="listItem.actorId" /><br /></p>
+            <p><label>Description:</label><input type="text" ng-model="listItem.desc" /><br /></p>
+            <input type="submit" id="submit" value="Submit" />
+        </form>
+        <ul ng-repeat="item in list">
+            <li>
+                <div ng-hide="editorEnabled(item)">
+                    Name: {{item.Name}}<br /> Actor: {{actorList[item.ActorId].Name}}<br /> Description: {{item.Description}}<br />
+                    <button ng-click="deleteItem(item)">Delete</button>
+                    <button ng-click="editItem(item)">Edit</button>
+                </div>
+                <div ng-show="editorEnabled(item)">
+                    Name: <input type="text" ng-model="item.Name" /><br />
+                    Actor: <input type="text" ng-model="actorList[item.ActorId].Name" /><br />
+                    Description: <input type="text" ng-model="item.Description" /><br />
+                    <button ng-click="saveItem(item)">Save</button>
+                </div>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
