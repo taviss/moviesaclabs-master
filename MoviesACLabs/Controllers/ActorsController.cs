@@ -42,6 +42,33 @@ namespace MoviesACLabs.Controllers
             return Ok(actorModel);
         }
 
+        //
+        [Route("searchactor/{rev:int}")]
+        public IList<ActorModel> GetActorWithRevenue(int rev)
+        {
+            var actors = db.Actors;
+            var actorsModel = Mapper.Map<IList<ActorModel>>(actors).Where(actor => actor.Revenue >= rev).ToList();
+
+            return actorsModel;
+        }
+
+        [Route("listactors/")]
+        public List<string> GetActorsAwards()
+        {
+            //TBD!!!!!!!!!!!!!!!!!!!
+            /*
+            var actors = db.Actors.Include(m => m.Awards);// OrderByDescending(award => award.Name.Length).First();
+            */
+            var innerJoinQuery =
+                (from actors in db.Actors
+                join awards in db.Awards on actors.Id equals awards.ActorId
+                select new { actorName = actors.Name, awardName = awards.Name }).ToList();
+
+            //var actorsModel = Mapper.Map<IList<ActorModel>>(actors).Where(actor => actor.Awards.Count != 0).ToList();
+
+            return innerJoinQuery;
+        }
+
         // PUT: api/Actors/5
         [ResponseType(typeof(void))]
         public IHttpActionResult PutActor(int id, ActorModel actorModel)
