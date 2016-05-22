@@ -53,20 +53,20 @@ namespace MoviesACLabs.Controllers
         }
 
         [Route("listactors/")]
-        public List<string> GetActorsAwards()
+        public IList<ActorModel> GetActorsAwards()
         {
             //TBD!!!!!!!!!!!!!!!!!!!
-            /*
+            
             var actors = db.Actors.Include(m => m.Awards);// OrderByDescending(award => award.Name.Length).First();
-            */
-            var innerJoinQuery =
+            
+            /*var innerJoinQuery =
                 (from actors in db.Actors
                 join awards in db.Awards on actors.Id equals awards.ActorId
-                select new { actorName = actors.Name, awardName = awards.Name }).ToList();
+                select new { actorName = actors.Name, awardName = awards.Name }).ToList();*/
 
-            //var actorsModel = Mapper.Map<IList<ActorModel>>(actors).Where(actor => actor.Awards.Count != 0).ToList();
+            var actorsModel = Mapper.Map<IList<ActorModel>>(actors).Where(actor => actor.Awards.Count != 0).ToList();
 
-            return innerJoinQuery;
+            return actorsModel;
         }
 
         // PUT: api/Actors/5

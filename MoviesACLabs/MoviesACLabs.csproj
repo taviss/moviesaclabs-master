@@ -144,10 +144,6 @@
     <Compile Include="Migrations\201603311406291_Initial.Designer.cs">
       <DependentUpon>201603311406291_Initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201605161135240_Awards.cs" />
-    <Compile Include="Migrations\201605161135240_Awards.Designer.cs">
-      <DependentUpon>201605161135240_Awards.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ActorModel.cs" />
     <Compile Include="Models\AwardModel.cs" />
@@ -172,9 +168,6 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201603311406291_Initial.resx">
       <DependentUpon>201603311406291_Initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201605161135240_Awards.resx">
-      <DependentUpon>201605161135240_Awards.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

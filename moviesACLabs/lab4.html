@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html ng-app="list">
+<html ng-app="testList">
 <head>
     <title>Lab 4</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
@@ -10,12 +10,14 @@
 <body>
 <div id="wrapper"  ng-controller="mainList">
 <form ng-submit="addItem()">
-    <input type="text" ng-focus="clearInput()" ng-blur="resetInput()" ng-model="listItem.name"/>
+    <input type="text" placeholder="Enter item name..." ng-model="listItem.name"/>
+    <input type="checkbox" ng-model="listItem.checked" />
+    <input type="submit" />
 </form>
-<ul ng-repeat="item in list">
-    <li><input type="checkbox" ng-model="item.checked" />{{item.name}}<button ng-click="deleteItem(item)">x</button></li>
+<ul ng-repeat="item in list | filter:tabFilter">
+    <li><input type="checkbox" ng-model="item.checked" />{{item.name}} <button ng-click="deleteItem(item)">x</button></li>
 </ul>
-<p>Count: {{count}}</p><a class="activeTab" href="#">All</a><a class="inactiveTab" href="#">Completed</a><a class="inactiveTab" href="#">Active</a>
+<p>Count: {{list.length}}</p><a class="activeTab" ng-click="enableTab(1)" href="#">All</a><a class="inactiveTab" ng-click="enableTab(2)" href="#">Completed</a><a class="inactiveTab" ng-click="enableTab(3)" href="#">Active</a>
 </div>
 </body>
 </html>
