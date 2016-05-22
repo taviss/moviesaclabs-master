@@ -10,8 +10,8 @@
 <body>
     <div id="wrapper" ng-controller="mainMov">
         <form ng-submit="addItem()">
-            <p><label>Title:</label><input type="text" ng-model="listItem.title" /><br /></p>
-            <p><label>Description:</label><input type="text" ng-model="listItem.desc" /><br /></p>
+            <p><label>Title:</label><input type="text" placeholder="Title" ng-model="listItem.title" /><br /></p>
+            <p><label>Description:</label><input type="text" placeholder="Description"ng-model="listItem.desc" /><br /></p>
             <input type="submit" id="submit" value="Submit" />
         </form>
         <ul ng-repeat="item in list">

@@ -86,22 +86,14 @@ app.service("MoviesService", function ($http) {
 app.controller('mainMov', function ($scope, MoviesService) {
     $scope.list = [];
     $scope.listItem = {};
-    $scope.listItem.title = "Title";
-    $scope.listItem.desc = "Description";
+    $scope.listItem.title = "";
+    $scope.listItem.desc = "";
     $scope.count = 0;
     $scope.editorStatus = 0;
 
     MoviesService.getActors().then(function (dataResponse) {
         $scope.list = dataResponse.data;
     });
-
-    $scope.clearInput = function () {
-        if ($scope.listItem.title == 'Title') $scope.listItem.name = '';
-    };
-
-    $scope.resetInput = function () {
-        if ($scope.listItem.name == '') $scope.listItem.name = 'Title';
-    };
 
     $scope.deleteItem = function (item) {
         console.log(item.Id);
