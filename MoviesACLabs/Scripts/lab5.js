@@ -42,14 +42,52 @@ app.service("MoviesService", function ($http) {
             }
         })
     }
+
+    this.getMovies = function () {
+        return $http({
+            method: "GET",
+            url: "/api/movies"
+        });
+    }
+
+    this.addMovie = function (movie) {
+        return $http({
+            method: "POST",
+            url: "/api/movies",
+            headers: { 'contentType': "application/json" },
+            data: {
+                "Id": 0,
+                "Title": movie.Title,
+                "Description": movie.Description
+            }
+        });
+    }
+
+    this.deleteMovie = function (id) {
+        return $http({
+            method: "DELETE",
+            url: "api/movies/" + id
+        });
+    }
+
+    this.updateMovie = function (movie) {
+        return $http({
+            method: "PUT",
+            url: "api/movies/" + movie.Id,
+            data: {
+                "Id": movie.Id,
+                "Title": movie.Title,
+                "Description": movie.Description
+            }
+        })
+    }
 });
 
 app.controller('mainMov', function ($scope, MoviesService) {
     $scope.list = [];
     $scope.listItem = {};
-    $scope.listItem.name = "";
-    $scope.listItem.dob = "1990-01-01"
-    $scope.listItem.revenue = 500;
+    $scope.listItem.title = "Title";
+    $scope.listItem.desc = "Description";
     $scope.count = 0;
     $scope.editorStatus = 0;
 
@@ -58,17 +96,17 @@ app.controller('mainMov', function ($scope, MoviesService) {
     });
 
     $scope.clearInput = function () {
-        if ($scope.listItem.name == 'Enter data...') $scope.listItem.name = '';
+        if ($scope.listItem.title == 'Title') $scope.listItem.name = '';
     };
 
     $scope.resetInput = function () {
-        if ($scope.listItem.name == '') $scope.listItem.name = 'Enter data...';
+        if ($scope.listItem.name == '') $scope.listItem.name = 'Title';
     };
 
     $scope.deleteItem = function (item) {
         console.log(item.Id);
-        MoviesService.deleteActor(item.Id).then(function () {
-            MoviesService.getActors().then(function (dataResponse) {
+        MoviesService.deleteMovie(item.Id).then(function () {
+            MoviesService.getMovies().then(function (dataResponse) {
                 $scope.list = dataResponse;
             })
         });
@@ -83,8 +121,8 @@ app.controller('mainMov', function ($scope, MoviesService) {
     }
 
     $scope.saveItem = function (item) {
-        MoviesService.updateActor(item).then(function () {
-            MoviesService.getActors().then(function (dataResponse) {
+        MoviesService.updateMovie(item).then(function () {
+            MoviesService.getMovies().then(function (dataResponse) {
                 $scope.list = dataResponse.data;
             })
         });
@@ -92,8 +130,8 @@ app.controller('mainMov', function ($scope, MoviesService) {
     }
 
     $scope.addItem = function () {
-        MoviesService.addActor($scope.listItem).then(function () {
-            MoviesService.getActors().then(function (dataResponse) {
+        MoviesService.addMovie($scope.listItem).then(function () {
+            MoviesService.getMovies().then(function (dataResponse) {
                 $scope.list = dataResponse.data;
             })
         });
