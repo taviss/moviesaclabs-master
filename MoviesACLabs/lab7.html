@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html ng-app="movies">
+<head>
+    <title>Lab 7</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+    <script src="Scripts/lab7.js"></script>
+    <link rel="stylesheet" type="text/css" href="Styles/lab5.css">
+    <meta charset="utf-8" />
+</head>
+<body>
+    <div id="wrapper" ng-controller="mainMov">
+        <p>Actor search:</p><br />
+        <form ng-submit="searchActor()">
+            <p><label>Revenue:</label><input type="text" ng-model="actorRevenue" /><br /></p>
+            <input type="submit" id="submit" value="Search" />
+        </form>
+        <ul ng-repeat="item in actorRevList">
+            <li>
+                <div>
+                    Name: {{item.Name}}<br /> DoB: {{item.DateOfBirth}}<br /> Revenue: {{item.Revenue}}<br />
+                </div>
+            </li>
+        </ul>
+        <br />
+        <p>Award search:</p><br />
+        <form ng-submit="searchAward()">
+            <p><label>Name:</label><input type="text" ng-model="awardName" /><br /></p>
+            <input type="submit" id="submit" value="Search" />
+        </form>
+        <ul ng-repeat="award in awardsSearchList">
+            <li>
+                <div>
+                    Name: {{award.Name}}<br /> Description: {{award.Description}}<br />
+                </div>
+            </li>
+        </ul>
+        <br />
+        <p>Actors with awards:</p>
+        <ul ng-repeat="actor in actorsAwardsList">
+            <li>
+                <div>
+                    Name: {{actor.Name}}<br /> DoB: {{actor.DateOfBirth}}<br />
+                    Award:{{actor.Awards[actor.Awards.length - 1].Name}}
+                </div>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
+

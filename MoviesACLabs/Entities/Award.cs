@@ -6,19 +6,14 @@ using System.Web;
 
 namespace MoviesACLabs.Entities
 {
-    public class Actor
+    public class Award
     {
         public int Id { get; set; }
 
         public string Name { get; set; }
 
-        public DateTime DateOfBirth { get; set; }
+        public string Description { get; set; }
 
-        public int Revenue { get; set; }
-
-        public virtual IList<Movie> Movies { get; set; }
-
-        public virtual IList<Award> Awards { get; set; }
-
+        public int ActorId { get; set; }
     }
 }
