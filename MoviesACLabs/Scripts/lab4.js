@@ -12,6 +12,7 @@ app.controller('mainList', function ($scope) {
         $scope.list.splice(i, 1);
     };
 
+
     $scope.addItem = function () {
         var ok = true;
         for(var i = 0, len = $scope.list.length; i < len; i++) {
