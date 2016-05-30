@@ -77,3 +77,5 @@ C:\Users\softv\Desktop\SV\moviesaclabs-master\MoviesACLabs\obj\Debug\MoviesACLab
 C:\Users\softv\Desktop\SV\moviesaclabs-master\MoviesACLabs\obj\Debug\MoviesACLabs.dll
 C:\Users\softv\Desktop\SV\moviesaclabs-master\MoviesACLabs\obj\Debug\MoviesACLabs.pdb
 C:\Users\softv\Desktop\SV\moviesaclabs-master\MoviesACLabs\obj\Debug\MoviesACLabs.Migrations.Awards.resources
+C:\Users\softv\Desktop\SV\moviesaclabs-master\MoviesACLabs\obj\Debug\MoviesACLabs.Migrations.Test.resources
+C:\Users\softv\Desktop\SV\moviesaclabs-master\MoviesACLabs\obj\Debug\MoviesACLabs.Migrations.FootballersTeams.resources

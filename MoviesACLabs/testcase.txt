@@ -1,0 +1,4 @@
+-Datele sunt afisate corect(less than 20 players, vowels, etc.)
+-La stergerea unei echipe trebuie refresh pentru a vedea modificarile + o eroare
+-Adaugarea echipelor se face corect(mai putin array-ul de jucatori pe care am uitat sa-l implementez)
+-Nu exista restrictii pe input-uri

@@ -23,6 +23,13 @@ namespace MoviesACLabs.App_Start
 
             Mapper.CreateMap<Award, AwardModel>();
             Mapper.CreateMap<AwardModel, Award>();
+
+            Mapper.CreateMap<Footballer, FootballerModel>();
+            Mapper.CreateMap<FootballerModel, Footballer>();
+
+            Mapper.CreateMap<Team, TeamModel>();
+            Mapper.CreateMap<TeamModel, Team>();
+
         }
     }
 }

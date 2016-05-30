@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html ng-app="lab_test">
+<head>
+    <title>Test Lab SV</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+    <script src="Scripts/labt.js"></script>
+    <link rel="stylesheet" type="text/css" href="Styles/lab5.css">
+    <meta charset="utf-8" />
+</head>
+<body>
+    <div id="header">
+        <h1>Index</h1>
+    </div>
+
+    <div id="menu">
+        <ul>
+            <li><a href="lab_test.html">Index</a></li>
+            <li><a href="#">Test</a></li>
+            <li><a href="#">Test</a></li>
+        </ul>
+    </div>
+    <div id="wrapper" ng-controller="testLab">
+        <p>Add a team</p>
+        <form ng-submit="addTeam()">
+            <p><label>Name:</label><input type="text" ng-model="listItem.name" placeholder="Name" /><br /></p>
+            <p><label>Country:</label><input type="text" ng-model="listItem.country" placeholder="Country"/><br /></p>
+            <input type="submit" id="submit" value="Add" />
+        </form>
+        <br />
+        <p>Delete a team</p>
+        <form ng-submit="deleteTeam()">
+            <p><label>Id:</label><input type="text" ng-model="iddel" placeholder="ID" /><br /></p>
+            <input type="submit" id="submit" value="Delete" />
+        </form>
+        <br />
+        <p>Teams with two vowels in their names:</p><br />
+        <ul ng-repeat="item in teamsVList">
+            <li>
+                <div>
+                    Id: {{item.Id}}<br /> Name: {{item.Name}}<br /> Country: {{item.Country}}<br />
+                </div>
+            </li>
+        </ul>
+        <br />
+        <p>Teams with less than 20 players:</p><br />
+        <ul ng-repeat="item in list | filter: lessThan('Players', 20)">
+            <li>
+                <div>
+                    Id: {{item.Id}}<br /> Name: {{item.Name}}<br /> Country: {{item.Country}}<br />
+                    <select>
+                        <option ng-repeat="row in item.Players" value="{{row.Name}}">{{row.Name}}</option>
+                    </select>
+                </div>
+            </li>
+        </ul>
+        <br />
+        <p>Teams with more than 20 players:</p><br />
+        <ul ng-repeat="item in list | filter: greaterThan('Players', 20)">
+            <li>
+                <div>
+                    Id: {{item.Id}}<br /> Name: {{item.Name}}<br /> Country: {{item.Country}}<br />
+                    <select>
+                        <option ng-repeat="row in item.Players" value="{{row.Name}}">{{row.Name}}</option>
+                    </select>
+                </div>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
+
