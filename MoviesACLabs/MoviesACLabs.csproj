@@ -150,6 +150,7 @@
     <Compile Include="Migrations\201603311406291_Initial.Designer.cs">
       <DependentUpon>201603311406291_Initial.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="Migrations\201605161135240_Awards.cs" />
     <Compile Include="Migrations\201605161135240_Awards.Designer.cs">
       <DependentUpon>201605161135240_Awards.cs</DependentUpon>
@@ -162,6 +163,8 @@
     <Compile Include="Migrations\201605301225458_Footballers-Teams.Designer.cs">
       <DependentUpon>201605301225458_Footballers-Teams.cs</DependentUpon>
     </Compile>
+=======
+>>>>>>> e205081726b149974b8e0f8bef63e369e877f1af
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ActorModel.cs" />
     <Compile Include="Models\AwardModel.cs" />
@@ -189,6 +192,7 @@
     <EmbeddedResource Include="Migrations\201603311406291_Initial.resx">
       <DependentUpon>201603311406291_Initial.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< HEAD
     <EmbeddedResource Include="Migrations\201605161135240_Awards.resx">
       <DependentUpon>201605161135240_Awards.cs</DependentUpon>
     </EmbeddedResource>
@@ -198,6 +202,8 @@
     <EmbeddedResource Include="Migrations\201605301225458_Footballers-Teams.resx">
       <DependentUpon>201605301225458_Footballers-Teams.cs</DependentUpon>
     </EmbeddedResource>
+=======
+>>>>>>> e205081726b149974b8e0f8bef63e369e877f1af
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

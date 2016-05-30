@@ -10,20 +10,18 @@
 <body>
     <div id="wrapper" ng-controller="mainMov">
         <form ng-submit="addItem()">
-            <p><label>Name:</label><input type="text" ng-model="listItem.name" /><br /></p>
-            <p><label>DoB:</label><input type="text" ng-model="listItem.dob" /><br /></p>
-            <p><label>Revenue:</label><input type="text" ng-model="listItem.revenue" /><br /></p>
+            <p><label>Title:</label><input type="text" placeholder="Title" ng-model="listItem.title" /><br /></p>
+            <p><label>Description:</label><input type="text" placeholder="Description"ng-model="listItem.desc" /><br /></p>
             <input type="submit" id="submit" value="Submit" />
         </form>
         <ul ng-repeat="item in list">
-            <li><div ng-hide="editorEnabled(item)">Name: {{item.Name}}<br /> DoB: {{item.DateOfBirth}}<br /> Revenue: {{item.Revenue}}<br />
+            <li><div ng-hide="editorEnabled(item)">Title: {{item.Title}}<br /> Description: {{item.Description}}<br />
                     <button ng-click="deleteItem(item)">Delete</button>
                     <button ng-click="editItem(item)">Edit</button>
                 </div>
                 <div ng-show="editorEnabled(item)">
-                    Name: <input type="text" ng-model="item.Name" /><br />
-                    DoB: <input type="text" ng-model="item.DateOfBirth" /><br />
-                    Revenue: <input type="text" ng-model="item.Revenue" /><br />
+                    Title: <input type="text" ng-model="item.Title" /><br />
+                    Description: <input type="text" ng-model="item.Description" /><br />
                     <button ng-click="saveItem(item)">Save</button>
                 </div>
             </li>
